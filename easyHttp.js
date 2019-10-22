@@ -39,4 +39,14 @@ class EasyHttp {
 
     this.xhr.send(JSON.stringify(data));
   }
+
+  delete(url, callback, index) {
+    this.xhr.open("DELETE", `${url}${index}`, true);
+
+    this.xhr.onload = () => {
+      callback(null, `Item ${index} deleted`);
+    }
+
+    this.xhr.send();
+  }
 }

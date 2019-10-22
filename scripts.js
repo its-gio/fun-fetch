@@ -13,3 +13,5 @@ const data = {
 // PUT
 // http.put("https://jsonplaceholder.typicode.com/posts/", data, (err, res) => err ? console.log(err) : console.log(res), 4);
 
+// DELETE
+// http.delete("https://jsonplaceholder.typicode.com/posts/", (err, res) => err ? console.log(err) : console.log(res), 4);
