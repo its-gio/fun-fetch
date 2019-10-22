@@ -28,4 +28,15 @@ class EasyHttp {
 
     this.xhr.send(JSON.stringify(data));
   }
+
+  put(url, data, callback, index) {
+    this.xhr.open("PUT", `${url}/${index}`, true);
+    this.xhr.setRequestHeader("Content-type", "application/json");
+
+    this.xhr.onload = () => {
+      callback(null, JSON.parse(this.xhr.responseText));
+    }
+
+    this.xhr.send(JSON.stringify(data));
+  }
 }
