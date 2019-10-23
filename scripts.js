@@ -14,6 +14,9 @@ const data = {
 //     .then(data => console.log(data));
 
 // PUT
-http.put("https://jsonplaceholder.typicode.com/users", 3, data)
-    .then(data => console.log(data));
+// http.put("https://jsonplaceholder.typicode.com/users", 3, data)
+//     .then(data => console.log(data));
+
 // DELETE
+// http.delete("https://jsonplaceholder.typicode.com/users", 3)
+//     .then(data => console.log(data));

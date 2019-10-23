@@ -37,4 +37,14 @@ class EasyHttp {
         .catch(err => rej(err));
     })
   }
+
+  delete(url, index) {
+    return new Promise((res, rej) => {
+      fetch(`${url}/${index}`, {
+        method: "DELETE"
+      })
+        .then(() => res(`Deleted: Item at index ${index}`))
+        .catch(err => rej(err));
+    })
+  }
 }
