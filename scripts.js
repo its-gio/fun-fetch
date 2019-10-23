@@ -1,11 +1,13 @@
 const http = new EasyHttp;
 const data = {
-    title: "This is the test title!",
-    body: "This is the test body!"
+    name: "Giovani Aguirre",
+    email: "media@its-g.io",
+    username: "its-gio"
 }
 
 // GET
-
+http.get("https://jsonplaceholder.typicode.com/users")
+    .then(data =>  console.log(data));
 // POST
 
 // PUT
