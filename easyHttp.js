@@ -1,16 +1,13 @@
 class EasyHttp {
-  get(url) {
-    return new Promise((res, rej) => {
-      fetch(url)
+  async get(url) {
+      return await fetch(url)
         .then(blob => blob.json())
-        .then(data => res(data))
-        .catch(err => rej(err));
-    })
+        .then(data => data)
+        .catch(err => err);
   }
 
-  post(url, data) {
-    return new Promise((res, rej) => {
-      fetch(url, {
+  async post(url, data) {
+      return await fetch(url, {
         method: "POST",
         headers: {
           "Content-type": "application/json"
@@ -18,14 +15,12 @@ class EasyHttp {
         body: JSON.stringify(data)
       })
         .then(blob => blob.json())
-        .then(data => res(data))
-        .catch(err => rej(err));
-    })
+        .then(data => data)
+        .catch(err => err);
   }
 
-  put(url, index, data) {
-    return new Promise((res, rej) => {
-      fetch(`${url}/${index}`, {
+  async put(url, index, data) {
+      return await fetch(`${url}/${index}`, {
         method: "PUT",
         headers: {
           "Content-type": "application/json"
@@ -33,18 +28,15 @@ class EasyHttp {
         body: JSON.stringify(data)
       })
         .then(blob => blob.json())
-        .then(data => res(data))
-        .catch(err => rej(err));
-    })
+        .then(data => data)
+        .catch(err => err);
   }
 
-  delete(url, index) {
-    return new Promise((res, rej) => {
-      fetch(`${url}/${index}`, {
+  async delete(url, index) {
+      return await fetch(`${url}/${index}`, {
         method: "DELETE"
       })
-        .then(() => res(`Deleted: Item at index ${index}`))
-        .catch(err => rej(err));
-    })
+        .then(() => `Deleted: Item at index ${index}`)
+        .catch(err => err);
   }
 }
