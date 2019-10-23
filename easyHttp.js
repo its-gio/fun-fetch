@@ -22,4 +22,19 @@ class EasyHttp {
         .catch(err => rej(err));
     })
   }
+
+  put(url, index, data) {
+    return new Promise((res, rej) => {
+      fetch(`${url}/${index}`, {
+        method: "PUT",
+        headers: {
+          "Content-type": "application/json"
+        },
+        body: JSON.stringify(data)
+      })
+        .then(blob => blob.json())
+        .then(data => res(data))
+        .catch(err => rej(err));
+    })
+  }
 }

@@ -10,9 +10,10 @@ const data = {
 //     .then(data =>  console.log(data));
 
 // POST
-http.post("https://jsonplaceholder.typicode.com/users", data)
-    .then(data => console.log(data));
+// http.post("https://jsonplaceholder.typicode.com/users", data)
+//     .then(data => console.log(data));
 
 // PUT
-
+http.put("https://jsonplaceholder.typicode.com/users", 3, data)
+    .then(data => console.log(data));
 // DELETE
